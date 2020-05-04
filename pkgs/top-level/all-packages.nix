@@ -14984,8 +14984,6 @@ in
         # optional
   };
 
-  snapd = callPackage ../os-specific/linux/snapd { };
-
   snappy = callPackage ../development/libraries/snappy { };
 
   soapyairspy = callPackage ../applications/radio/soapyairspy { };
