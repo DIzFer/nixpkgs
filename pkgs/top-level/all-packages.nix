@@ -17469,8 +17469,6 @@ in
         # optional
   };
 
-  snapd = callPackage ../os-specific/linux/snapd { };
-
   snappy = callPackage ../development/libraries/snappy { };
 
   snow = callPackage ../tools/security/snow { };
