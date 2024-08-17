@@ -1,7 +1,6 @@
 {
   mkKdeDerivation,
   qtwebengine,
-  akregator,
   kaddressbook,
   kmail,
   korganizer,
@@ -12,7 +11,6 @@ mkKdeDerivation {
 
   extraBuildInputs = [
     qtwebengine
-    akregator
     kaddressbook
     kmail
     korganizer
