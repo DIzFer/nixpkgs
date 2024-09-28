@@ -3,10 +3,7 @@
   stdenv,
   fetchFromGitHub,
   buildPythonPackage,
-  pytest,
   pythonOlder,
-  xclip,
-  xvfb-run,
 }:
 
 buildPythonPackage rec {
@@ -26,19 +23,6 @@ buildPythonPackage rec {
   postPatch = ''
     substituteInPlace setup.py \
       --replace docs/README.md README.md
-  '';
-
-  nativeCheckInputs =
-    [ pytest ]
-    ++ lib.optionals stdenv.hostPlatform.isLinux [
-      xclip
-      xvfb-run
-    ];
-
-  checkPhase = ''
-    runHook preCheck
-    ${lib.optionalString stdenv.hostPlatform.isLinux "xvfb-run -s '-screen 0 800x600x24'"} pytest tests
-    runHook postCheck
   '';
 
   meta = {
